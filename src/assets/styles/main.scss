@@ -1,0 +1,15 @@
+/* fonts */
+@use './fonts.scss';
+
+/* abstracts */
+@use 'abstracts/variables';
+
+/* base */
+@use 'base/reset';
+
+/* components */
+/* layout */
+/* pages */
+/* themes */
+
+body { font-family: variables.$font-family-main; }
