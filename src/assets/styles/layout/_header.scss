@@ -1,0 +1,42 @@
+@use '../abstracts/variables';
+
+nav {
+    .options-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        padding: variables.$size-max;
+        .menu-options {
+            position: absolute;
+            top: 4.5em;
+            right: 2.5em;
+            
+            .options {
+                width: 4.7em;
+                text-align: right;
+                transition: font-weight .3s;
+                a { color: variables.$w; }
+                
+                &:hover { font-weight: 700; }
+                
+                #icons {
+                    display: flex;
+                    justify-content: end;
+                    margin-top: variables.$size-max;
+                    .btn-cta {
+                        border: none;
+                        cursor: pointer;
+                        padding: variables.$size-minimal;
+                        background-color: variables.$no-bg-color;
+                    }
+                }
+            }
+        }
+    }
+
+
+    #menu {
+        color: variables.$w;
+    }
+}

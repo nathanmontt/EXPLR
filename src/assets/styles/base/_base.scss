@@ -1,0 +1,10 @@
+.menu-options {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s ease;
+}
+
+.menu-options.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
