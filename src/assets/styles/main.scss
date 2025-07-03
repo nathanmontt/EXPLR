@@ -9,8 +9,13 @@
 @use 'base/reset';
 
 /* components */
+
 /* layout */
+@use 'layout/header';
+
 /* pages */
+@use 'pages/home';
+
 /* themes */
 
 body { font-family: variables.$font-family-main; }

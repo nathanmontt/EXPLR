@@ -5,7 +5,6 @@
     import LightModeIcon from '../icons/modes/LightModeIcon.vue';
     import { ref, reactive } from 'vue';
     
-    
     const homePage = reactive({ href:'../../App.vue', id: 'menu' });
     
     const menuVisible = ref(false);
@@ -19,9 +18,7 @@
         <div class="options-top">
             <a :="homePage">EXPLR</a>
             <MenuIcon v-on:click="toggleMenu" />
-            <ul class="menu-options" v-bind:class="{
-                visible: menuVisible
-            }">
+            <ul class="menu-options" v-bind:class="{ visible: menuVisible }">
                 <li class="options"><a href="#">ABOUT</a></li>
                 <li class="options"><a href="#">CONTACT</a></li>
                 <li class="options">
