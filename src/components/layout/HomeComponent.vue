@@ -1,6 +1,5 @@
 <script setup>
     import FolderIcon from '../icons/player/FolderIcon.vue';
-
 </script>
 
 <template>
@@ -8,6 +7,3 @@
         <FolderIcon/>
     </div>
 </template>
-
-<style>
-</style>

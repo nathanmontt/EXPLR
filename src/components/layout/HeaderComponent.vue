@@ -3,6 +3,7 @@
     import MenuIcon from '../icons/common/MenuIcon.vue';
     import DarkModeIcon from '../icons/modes/DarkModeIcon.vue';
     import LightModeIcon from '../icons/modes/LightModeIcon.vue';
+    import { setTheme } from '@/utils/theme';
     import { ref, reactive } from 'vue';
     
     const homePage = reactive({ href:'../../App.vue', id: 'menu' });
@@ -13,14 +14,14 @@
         menuVisible.value = !menuVisible.value
     }
 
+    // Persistência de estado (light/dark)
+    // function setTheme (theme) {
+    //     document.body.setAttribute('id', theme);
+    //     localStorage.setItem('theme', theme);
+    // }
     // Modes
-    const lightMode = ref(false);
-    const darkMode = ref(true);
-
-    function lightModeFunction () {
-        let ligthModeVar = document.body;
-        console.log(ligthModeVar);
-    }
+    function lightModeFunction () { setTheme('light-mode'); }
+    function darkModeFunction () { setTheme('dark-mode'); }
 </script>
 
 <template>
@@ -34,7 +35,7 @@
                     <li class="options"><a href="#">CONTACT</a></li>
                     <li class="options">
                         <span id="icons">
-                            <button class="btn-cta"><DarkModeIcon/></button>
+                            <button class="btn-cta" v-on:click="darkModeFunction"><DarkModeIcon/></button>
                             <button class="btn-cta" v-on:click="lightModeFunction"><LightModeIcon/></button>
                         </span>
                     </li>

@@ -1,9 +1,9 @@
 @use '../abstracts/variables';
 
 body#light-mode {
-    background-color: variables.$w
+    background-color: variables.$w;
 }
 
 body#dark-mode {
-    background-color: variables.$b
+    background-color: variables.$first-color;
 }
