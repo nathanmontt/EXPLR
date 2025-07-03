@@ -1,34 +1,50 @@
 @use '../abstracts/variables';
 
 nav {
+    background-color: blue;
+    position: absolute;
+    top: 0;
+    // bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    // border: 4px solid rosybrown;
+    
     .options-top {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-    
         padding: variables.$size-max;
-        .menu-options {
-            position: absolute;
-            top: 4.5em;
-            right: 2.5em;
-            
-            .options {
-                width: 4.7em;
-                text-align: right;
-                transition: font-weight .3s;
-                a { color: variables.$w; }
-                
-                &:hover { font-weight: 700; }
-                
-                #icons {
-                    display: flex;
-                    justify-content: end;
-                    margin-top: variables.$size-max;
-                    .btn-cta {
-                        border: none;
-                        cursor: pointer;
-                        padding: variables.$size-minimal;
-                        background-color: variables.$no-bg-color;
+        
+        // border: 4px solid rosybrown;
+        
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        .menu-dropdown-holder {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            .menu-options {
+                .options {
+                    width: 4.7em;
+                    text-align: right;
+                    transition: font-weight .3s;
+                    a { color: variables.$w; }
+                    
+                    &:hover { font-weight: 700; }
+                    
+                    #icons {
+                        display: flex;
+                        justify-content: end;
+                        margin-top: variables.$size-max;
+                        .btn-cta {
+                            border: none;
+                            cursor: pointer;
+                            padding: variables.$size-minimal;
+                            background-color: variables.$no-bg-color;
+                        }
                     }
                 }
             }

@@ -18,5 +18,6 @@
 @use 'pages/home';
 
 /* themes */
+@use 'theme/themes';
 
 body { font-family: variables.$font-family-main; }

@@ -4,12 +4,10 @@
 </script>
 
 <template>
-    <div id="container-folders">
-        <FolderIcon/>
+    <div id="container-folder">
         <FolderIcon/>
     </div>
 </template>
 
-<style lang="scss">
-
+<style>
 </style>

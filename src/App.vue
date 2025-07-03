@@ -4,11 +4,12 @@
 </script>
 
 <template>
-  <header>
-    <HeaderComponent />
-  </header>
-
-  <main>
-    <HomeComponent/>
-  </main>
+  <body>
+    <header>
+      <HeaderComponent />
+    </header>
+    <main>
+      <HomeComponent />
+    </main>
+  </body>
 </template>

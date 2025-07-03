@@ -1,16 +1,28 @@
+// colors
 $b: black;
 $w: #fcf7f8;
 $no-bg-color: transparent;
 $first-color: #202122;
 $second-color: #102542;
-$third-color: #1E201E;
+$third-color: #38383a;
 $fourth-color: #a31621;
 
+// fonts
 $font-family-main: "Noto Sans Display", sans-serif;
 
+// sizes (for padding, margin)
 $size-blaster: 7em;
 $size-maximus: 5em;
 $size-max: 2em;
 $size-med: 1em;
 $size-small: .5em;
 $size-minimal: .2em;
+
+// sizes (for media queries)
+$size-media-query-phone: 320px;
+$size-media-query-tablet: 768px;
+$size-media-query-desktop: 1024px;
+
+// time (for transitions)
+$time-minimal: .25s;
+$time-small: .5s;
