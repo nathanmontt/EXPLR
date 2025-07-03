@@ -1,0 +1,12 @@
+@use '../abstracts/variables';
+
+#folder-icon {
+    cursor: pointer;
+    // border: 2px solid;
+    width: variables.$size-maximus;
+    height: variables.$size-maximus;
+    padding: 1.5em;
+    margin: variables.$size-med;
+    background-color: variables.$fourth-color;
+    border-radius: 5px;
+}
