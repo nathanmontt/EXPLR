@@ -1,13 +1,17 @@
 @use '../abstracts/variables';
 
 body#light-mode {
-    background-color: variables.$white-mode;
+    background-color: variables.$light-mode;
     color: variables.$dark-mode;
+
+    transition: all .8s;
 }
 
 body#dark-mode {
     background-color: variables.$dark-mode;
-    color: variables.$white-mode;
+    color: variables.$light-mode;
+
+    transition: all .8s;
 }
 
 body#light-mode a,
