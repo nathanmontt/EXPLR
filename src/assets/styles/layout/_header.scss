@@ -1,7 +1,6 @@
 @use '../abstracts/variables';
 
 nav {
-    background-color: blue;
     position: absolute;
     top: 0;
     // bottom: 0;
@@ -31,7 +30,6 @@ nav {
                     width: 4.7em;
                     text-align: right;
                     transition: font-weight .3s;
-                    a { color: variables.$w; }
                     
                     &:hover { font-weight: 700; }
                     
@@ -52,7 +50,7 @@ nav {
     }
 
 
-    #menu {
-        color: variables.$w;
-    }
+    // #menu {
+    //     color: variables.$w;
+    // }
 }

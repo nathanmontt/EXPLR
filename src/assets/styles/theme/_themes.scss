@@ -1,9 +1,16 @@
 @use '../abstracts/variables';
 
 body#light-mode {
-    background-color: variables.$w;
+    background-color: variables.$white-mode;
+    color: variables.$dark-mode;
 }
 
 body#dark-mode {
-    background-color: variables.$first-color;
+    background-color: variables.$dark-mode;
+    color: variables.$white-mode;
+}
+
+body#light-mode a,
+body#dark-mode a {
+    color: inherit;
 }
