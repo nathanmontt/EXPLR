@@ -5,13 +5,7 @@
 </script>
 
 <template>
-    <Teleport to="#modal" defer>
-        <div class="modal-bg">
-            <div class="modal">
-                Click outside this modal to close it!
-            </div>
-        </div>
-    </Teleport>
+    <div id="modal"></div>
 </template>
 
 <style lang="scss">
