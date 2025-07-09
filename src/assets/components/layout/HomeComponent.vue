@@ -1,6 +1,5 @@
 <script setup>
     import FolderIcon from '../icons/player/FolderIcon.vue';
-    import ModalComponent from '../common/ModalComponent.vue';
     import { onClickOutside } from '@vueuse/core';
     import { ref } from 'vue';
 import BackArrowIcon from '../icons/common/BackArrowIcon.vue';

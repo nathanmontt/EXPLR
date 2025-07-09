@@ -3,9 +3,9 @@
     import MenuIcon from '../icons/common/MenuIcon.vue';
     import DarkModeIcon from '../icons/modes/DarkModeIcon.vue';
     import LightModeIcon from '../icons/modes/LightModeIcon.vue';
-    import { setTheme, getSavedTheme } from '@/utils/theme';
+    import { setTheme, getSavedTheme } from '@/assets/utils/theme';
     import { ref, reactive } from 'vue';
-    import { iconColors } from '@/utils/iconColors';
+    import { iconColors } from '@/assets/utils/iconColors';
     
     // Link para a homepage
     const homePage = reactive({ href:'../../App.vue', id: 'menu' });
