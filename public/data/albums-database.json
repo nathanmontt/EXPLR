@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Crônicas de Néon",
+    "artist": "EXPLR",
+    "year": 2024,
+    "coverArtPath": "./assets/covers/cronicas-de-neon.jpg",
+    "downloadPath": "./downloads/EXPLR-music/cronicas-de-neon.zip",
+    "songs": [
+      { "title": "Avenida dos Sonhos", "filePath": "./assets/audio/avenida-dos-sonhos.mp3" },
+      { "title": "Chuva de Pixels", "filePath": "./assets/audio/chuva-de-pixels.mp3" }
+    ]
+  },
+  {
+    "title": "Sussurros do Silício",
+    "artist": "EXPLR",
+    "year": 2024,
+    "coverArtPath": "./assets/covers/sussurros-do-silicio.jpg",
+    "downloadPath": "./downloads/EXPLR-music/sussurros-do-silicio.zip",
+    "songs": [
+      { "title": "Memória Volátil", "filePath": "./assets/audio/memoria-volatil.mp3" },
+      { "title": "Pulso Binário", "filePath": "./assets/audio/pulso-binario.mp3" }
+    ]
+  }
+]

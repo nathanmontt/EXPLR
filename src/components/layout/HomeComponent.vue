@@ -3,6 +3,7 @@
     import ModalComponent from '../common/ModalComponent.vue';
     import { onClickOutside } from '@vueuse/core';
     import { ref } from 'vue';
+import BackArrowIcon from '../icons/common/BackArrowIcon.vue';
 
     const isModalOpen = ref(false);
     const modal = ref(null);
@@ -22,8 +23,9 @@
             <Transition name="modal">
                 <div class="modal-bg" v-if="isModalOpen">
                     <div class="modal" ref="modal">
-                        <button class="close-btn" @click="isModalOpen = false">X</button>
-                        <div>Click outside this modal to close it!</div>
+                        <button class="back-btn" @click="isModalOpen = false">
+                            <BackArrowIcon />
+                        </button>
                     </div>
                 </div>
             </Transition>
