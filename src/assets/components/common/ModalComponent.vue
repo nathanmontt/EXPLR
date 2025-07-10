@@ -9,8 +9,9 @@
 </template>
 
 <style lang="scss">
-    @use '../../assets/styles/abstracts/variables' as *;
-    @use '../../assets/styles/layout/header' as *;
-    @use '../../assets/styles/base/base' as *;
-    @use '../../assets/styles/theme/themes' as *;
+    @use '../../../assets/styles/abstracts/variables' as *;
+    @use '../../../assets/styles/components/modal' as *;
+    @use '../../../assets/styles/layout/header' as *;
+    @use '../../../assets/styles/base/base' as *;
+    @use '../../../assets/styles/theme/themes' as *;
 </style>

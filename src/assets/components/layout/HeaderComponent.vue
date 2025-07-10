@@ -27,7 +27,7 @@
 <template>
     <nav>
         <div class="options-top">
-            <a :="homePage">EXPLR</a>
+            <a :="homePage" class="project-name">EXPLR</a>
             <div class="menu-dropdown-holder">
                 <MenuIcon :fill="getIconColor()" v-on:click="toggleMenu" />
                 <ul class="menu-options" v-bind:class="{ visible: menuVisible }">
@@ -47,8 +47,8 @@
 </template>
 
 <style lang="scss">
-    @use '../../assets/styles/abstracts/variables' as *;
-    @use '../../assets/styles/layout/header' as *;
-    @use '../../assets/styles/base/base' as *;
-    @use '../../assets/styles/theme/themes' as *;
+    @use '../../../assets/styles/abstracts/variables' as *;
+    @use '../../../assets/styles/layout/header' as *;
+    @use '../../../assets/styles/base/base' as *;
+    @use '../../../assets/styles/theme/themes' as *;
 </style>

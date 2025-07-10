@@ -20,6 +20,9 @@ nav {
         top: 0;
         right: 0;
         left: 0;
+
+        .project-name { height: 1.5em; }
+        
         .menu-dropdown-holder {
             display: flex;
             flex-direction: column;

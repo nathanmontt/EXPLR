@@ -1,7 +1,7 @@
 <script setup>
-  import ModalComponent from './components/common/ModalComponent.vue';
-  import HeaderComponent from './components/layout/HeaderComponent.vue';
-  import HomeComponent from './components/layout/HomeComponent.vue';
+  import ModalComponent from './assets/components/common/ModalComponent.vue';
+  import HeaderComponent from './assets/components/layout/HeaderComponent.vue';
+  import HomeComponent from './assets/components/layout/HomeComponent.vue'; 
 </script>
 
 <template>
