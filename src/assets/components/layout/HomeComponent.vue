@@ -56,13 +56,11 @@
         <div v-if="isLoading">Carregando...</div>
 
         <button class="btn-cta-folder" @click="openAlbumAndModal" v-else-if="currentAlbum">
-            <!-- Caso o álbum ainda não tenha sido revelado, mostrar o ícone da pasta -->
             <FolderIcon v-if="!isAlbumRevealed" />
-            <!-- Caso contrário, mostrar a capa -->
             <img v-else :src="currentAlbum.coverArtPath" :alt="`Capa do álbum ${currentAlbum.title}`" class="folder-cover-art" />
         </button>
         <div v-else>
-            <p>Nenhum álbum disponível esta semana. Volte em breve!</p>
+            <p id="no-album">Nenhum álbum disponível esta semana. Volte em breve!</p>
         </div>
         
         <Teleport to="#modal" defer>
@@ -74,16 +72,18 @@
                         </button>
 
                         <!-- Conteúdo dinâmico do álbum dentro do modal -->
-                        <div class="album-content">
-                            <img :src="currentAlbum.coverArtPath" :alt="`Capa do álbum ${currentAlbum.title}`" class="modal-cover-art">
-                            <h2 class="album-title">{{ currentAlbum.title }}</h2>
-                            <h3 class="album-artist">{{ currentAlbum.artist }} - {{ currentAlbum.year }}</h3>
-                            <ul class="song-list">
-                                <li v-for="song in currentAlbum.songs" :key="song.filePath" class="song-item">
-                                    {{ song.title }}
-                                </li>
-                            </ul>
-                            <a :href="currentAlbum.downloadPath" download class="download-link">Baixar Álbum</a>
+                        <div id="album-content">
+                            <img :src="currentAlbum.coverArtPath" :alt="`Capa do álbum ${currentAlbum.title}`" class="cover-art">
+                            <div class="container-test">
+                                <div id="album-info">
+                                    <h2 class="album-title">{{ currentAlbum.title }}</h2>
+                                    <h3 class="album-artist">{{ currentAlbum.artist }} - {{ currentAlbum.year }}</h3>
+                                </div>
+                                <ul id="song-list">
+                                    <li v-for="song in currentAlbum.songs" :key="song.filePath" class="song-item"> {{ song.title }} </li>
+                                </ul>
+                                <a :href="currentAlbum.downloadPath" download class="download-link">Baixar Álbum</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -95,36 +95,5 @@
 <style lang="scss">
     @use '../../../assets/styles/components/modal' as *;
     @use '../../../assets/styles/abstracts/variables' as *;
-
-    .btn-cta-folder {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        // line-height: 0;
-    }
-
-    .folder-cover-art {
-        width: $size-master-blaster;
-        height: $size-master-blaster;
-        object-fit: cover;
-        border-radius: 5px;
-        transition: transform $time-minimal ease;
-
-        &:hover {
-            transform: scale(1.05);
-        }
-    }
-
-    .modal-cover-art {
-        padding: 0;
-        margin: 0;
-        max-width: 100%;
-        aspect-ratio: 2 / 1;
-        object-fit: cover;
-        
-        @media screen and (min-width: 768px) {
-            aspect-ratio: 5 / 1;
-        }
-    }
+    @use '../../styles/pages/home' as *;
 </style>

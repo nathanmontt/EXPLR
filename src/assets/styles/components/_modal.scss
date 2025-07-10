@@ -20,7 +20,7 @@
     .modal {
         // border: 4px solid blue;
         width: 90dvw;
-        max-height: 60dvh;
+        max-height: 80dvh;
         position: relative;
         background-color: variables.$light-mode;
         // padding: variables.$size-small;
@@ -30,8 +30,8 @@
 
         .back-btn {
             position: absolute;
-            top: 10px;
-            // right: 10px;
+            top: 15px;
+            left: 15px;
 
             background: none;
             border: none;
@@ -39,14 +39,46 @@
         }
 
         scrollbar-width: none;
+
+        #album-content {
+            .cover-art {
+                max-width: 100%;
+                object-fit: cover;
+                
+                @media screen and (min-width: 768px) {
+                    aspect-ratio: 5 / 1;
+                }
+            }
+
+            #album-info {
+                // border: 1px solid firebrick;
+                color: variables.$b;
+                margin: variables.$size-med 0 variables.$size-med variables.$size-med;
+                .album-title {}
+                .album-artist {}
+            }
+            
+            #song-list {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                margin: variables.$size-med 0 variables.$size-med variables.$size-med;
+                color: variables.$b;
+                
+                @media screen and (max-width: 900px) {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .song-item { margin-bottom: 4px;}
+            }
+            
+            .download-link {
+                color: variables.$b;
+                // padding: variables.$size-small;
+                margin: variables.$size-med;
+            }
+        }
     }
 }
 
-.modal-enter-active, .modal-leave-active {
-    transition: all .25s ease;
-}
-
-.modal-enter-from, .modal-leave-to {
-    transform: scale(1.1);
-    opacity: 0;
-}
+.modal-enter-active, .modal-leave-active { transition: all .25s ease; }
+.modal-enter-from, .modal-leave-to { transform: scale(1.1); opacity: 0; }

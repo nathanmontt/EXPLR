@@ -17,4 +17,34 @@
     @media (min-width: (variables.$size-media-query-tablet - 68px)) {
         flex-direction: row;
     }
+
+    .btn-cta-folder {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        // line-height: 0;
+    }
+
+    #no-album {
+        width: 15em;
+        text-align: center;
+        font-weight: 700;
+        
+        @media screen and (min-width: 768px) {
+            width: 100%;
+        }
+    }
+
+    .folder-cover-art {
+        width: variables.$size-master-blaster;
+        height: variables.$size-master-blaster;
+        object-fit: cover;
+        border-radius: 5px;
+        transition: transform variables.$time-minimal ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
 }
