@@ -78,7 +78,7 @@
                         <!-- Conteúdo dinâmico do álbum dentro do modal -->
                         <div id="album-content">
                             <img
-                                :src="currentAlbum.personaPath" 
+                                :src="currentAlbum.personaArtPath" 
                                 :alt="`Capa do álbum ${currentAlbum.title}`" class="persona-art" 
                             />
                             

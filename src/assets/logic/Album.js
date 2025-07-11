@@ -9,6 +9,7 @@ class Album {
     this.artist = albumData.artist;
     this.year = albumData.year;
     this.coverArtPath = albumData.coverArtPath;
+    this.personaArtPath = albumData.personaArtPath;
     this.downloadPath = albumData.downloadPath;
 
     // Cria instâncias da classe Song para cada música
