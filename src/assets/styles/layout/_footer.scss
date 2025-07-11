@@ -1,0 +1,25 @@
+@use '../abstracts/variables';
+
+.container-socials {
+    position: absolute;
+    // top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 1em .5em 0;
+        
+        li {
+            font-weight: 700;
+            margin: variables.$size-minimal;
+            transition: transform variables.$time-minimal;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
