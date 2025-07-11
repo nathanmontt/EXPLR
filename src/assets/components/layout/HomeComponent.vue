@@ -57,7 +57,11 @@
 
         <button class="btn-cta-folder" @click="openAlbumAndModal" v-else-if="currentAlbum">
             <FolderIcon v-if="!isAlbumRevealed" />
-            <img v-else :src="currentAlbum.coverArtPath" :alt="`Capa do álbum ${currentAlbum.title}`" class="folder-cover-art" />
+            <img
+                v-else 
+                :src="currentAlbum.coverArtPath" 
+                :alt="`Capa do álbum ${currentAlbum.title}`" class="folder-cover-art" 
+            />
         </button>
         <div v-else>
             <p id="no-album">Nenhum álbum disponível esta semana. Volte em breve!</p>
@@ -73,11 +77,15 @@
 
                         <!-- Conteúdo dinâmico do álbum dentro do modal -->
                         <div id="album-content">
-                            <img :src="currentAlbum.coverArtPath" :alt="`Capa do álbum ${currentAlbum.title}`" class="cover-art">
-                            <div class="container-test">
+                            <img
+                                :src="currentAlbum.personaPath" 
+                                :alt="`Capa do álbum ${currentAlbum.title}`" class="persona-art" 
+                            />
+                            
+                            <div class="container-album-info">
                                 <div id="album-info">
                                     <h2 class="album-title">{{ currentAlbum.title }}</h2>
-                                    <h3 class="album-artist">{{ currentAlbum.artist }} - {{ currentAlbum.year }}</h3>
+                                    <h3 class="album-persona">{{ currentAlbum.artist }} ({{ currentAlbum.year }})</h3>
                                 </div>
                                 <ul id="song-list">
                                     <li v-for="song in currentAlbum.songs" :key="song.filePath" class="song-item"> {{ song.title }} </li>

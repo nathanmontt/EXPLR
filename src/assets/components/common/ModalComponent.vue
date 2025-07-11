@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <div id="modal"></div>
+    <!-- <div id="modal"></div> -->
 </template>
 
 <style lang="scss">

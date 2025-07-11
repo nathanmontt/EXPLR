@@ -13,10 +13,12 @@
     <main>
       <HomeComponent />
 
-      <section>
+      <!-- <section>
         <ModalComponent />
-      </section>
+      </section> -->
     </main>
+
+    <div id="modal"></div>
 
     <footer>
       <FooterComponent />

@@ -4,8 +4,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    // right: 0;
-    // bottom: 0;
     
     min-width: 100dvw;
     min-height: 100dvh;
@@ -18,15 +16,13 @@
     align-items: center;
     
     .modal {
-        // border: 4px solid blue;
+        position: relative;
+        overflow-y: scroll;
+        margin: 1em;
         width: 90dvw;
         max-height: 80dvh;
-        position: relative;
-        background-color: variables.$light-mode;
-        // padding: variables.$size-small;
-        overflow-y: scroll;
         border-radius: 5px;
-        margin: 1em;
+        background-color: variables.$light-mode;
 
         .back-btn {
             position: absolute;
@@ -41,40 +37,68 @@
         scrollbar-width: none;
 
         #album-content {
+            @media screen and (min-width: 1440px) {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+            
             .cover-art {
-                max-width: 100%;
-                object-fit: cover;
+                // max-width: 100%;
+                // max-height: 100%;
                 
-                @media screen and (min-width: 768px) {
-                    aspect-ratio: 5 / 1;
-                }
+                // object-fit: cover;
+                // @media screen and (min-width: 1440px) {
+                //     max-width: 20%;
+                //     object-fit: cover;
+                // }
+                
+                // @media screen and (min-width: 768px) { aspect-ratio: 3 / 1; }
             }
 
-            #album-info {
-                // border: 1px solid firebrick;
-                color: variables.$b;
-                margin: variables.$size-med 0 variables.$size-med variables.$size-med;
-                .album-title {}
-                .album-artist {}
-            }
-            
-            #song-list {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                margin: variables.$size-med 0 variables.$size-med variables.$size-med;
-                color: variables.$b;
+            .persona-art {
+                max-width: 100%;
+                max-height: 100%;
                 
-                @media screen and (max-width: 900px) {
-                    display: flex;
-                    flex-direction: column;
+                object-fit: cover;
+                @media screen and (min-width: 1440px) {
+                    max-width: 20%;
+                    object-fit: cover;
                 }
-                .song-item { margin-bottom: 4px;}
+                
+                @media screen and (min-width: 768px) { aspect-ratio: 3 / 1; }
             }
             
-            .download-link {
-                color: variables.$b;
-                // padding: variables.$size-small;
-                margin: variables.$size-med;
+            .container-album-info {
+                border: 6px solid firebrick;
+                @media screen and (min-width: 900px) {
+                    width: 100%;
+                }
+
+                #album-info {
+                    color: variables.$b;
+                    margin: variables.$size-med 0 variables.$size-med variables.$size-med;
+                    .album-title {}
+                    .album-persona {}
+                }
+                
+                #song-list {
+                    // display: grid;
+                    // grid-template-columns: repeat(4, 1fr);
+                    margin: variables.$size-med 0 variables.$size-med variables.$size-med;
+                    color: variables.$b;
+                    
+                    @media screen and (max-width: 900px) {
+                        // display: flex;
+                        // flex-direction: column;
+                    }
+                    .song-item { margin-bottom: 4px;}
+                }
+                
+                .download-link {
+                    color: variables.$b;
+                    // padding: variables.$size-small;
+                    margin: variables.$size-med;
+                }
             }
         }
     }
