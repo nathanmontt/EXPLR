@@ -1,5 +1,7 @@
 @use '../abstracts/variables';
 
+// ::-webkit-scrollbar { display: none; }
+
 .modal-bg {
     position: fixed;
     top: 0;
@@ -8,7 +10,7 @@
     min-width: 100dvw;
     min-height: 100dvh;
 
-    background-color: #000000ad;
+    background-color: variables.$modal;
     z-index: 1;
     
     display: flex;
@@ -33,71 +35,71 @@
             border: none;
             cursor: pointer;
         }
-
+        
         scrollbar-width: none;
-
+        
         #album-content {
             @media screen and (min-width: 1440px) {
                 display: flex;
-                flex-direction: row-reverse;
+                // flex-direction: row-reverse;
             }
             
-            .cover-art {
-                // max-width: 100%;
-                // max-height: 100%;
-                
-                // object-fit: cover;
-                // @media screen and (min-width: 1440px) {
-                //     max-width: 20%;
-                //     object-fit: cover;
-                // }
-                
-                // @media screen and (min-width: 768px) { aspect-ratio: 3 / 1; }
-            }
-
             .persona-art {
                 max-width: 100%;
-                max-height: 100%;
-                
                 object-fit: cover;
-                @media screen and (min-width: 1440px) {
-                    max-width: 20%;
-                    object-fit: cover;
-                }
-                
                 @media screen and (min-width: 768px) { aspect-ratio: 3 / 1; }
+                @media screen and (min-width: 1440px) {
+                    max-width: 25dvw;
+                    max-height: 80dvh;
+                }
             }
             
             .container-album-info {
-                border: 6px solid firebrick;
-                @media screen and (min-width: 900px) {
-                    width: 100%;
-                }
-
+                color: variables.$b;
                 #album-info {
-                    color: variables.$b;
-                    margin: variables.$size-med 0 variables.$size-med variables.$size-med;
-                    .album-title {}
-                    .album-persona {}
+                    padding: variables.$size-max variables.$size-max 0 variables.$size-max;
                 }
                 
-                #song-list {
-                    // display: grid;
-                    // grid-template-columns: repeat(4, 1fr);
-                    margin: variables.$size-med 0 variables.$size-med variables.$size-med;
-                    color: variables.$b;
-                    
-                    @media screen and (max-width: 900px) {
-                        // display: flex;
-                        // flex-direction: column;
+                .grid {
+                    @media screen and (min-width: 1440px) { 
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
                     }
-                    .song-item { margin-bottom: 4px;}
+                    
+                    #song-list {
+                        // border-bottom: .05em solid variables.$b;
+                        margin: variables.$size-med;
+                        padding: variables.$size-med;
+                        
+                        @media screen and (min-width: 1440px) {
+                            // width: 20dvw;
+                            height: 60dvh;
+                            overflow-y: scroll;
+                            scrollbar-width: none;
+                        }
+                        .song-item {
+                            margin-bottom: 5px;
+                        }
+                    }
+                    
+                    #discography {
+                        display: none;
+                        @media screen and (min-width: 1440px) {
+                            display: block;
+                            overflow-y: scroll;
+                            scrollbar-width: none;
+                            padding: variables.$size-max;
+                            // color: variables.$b;
+                            // width: 100%;
+                            height: 62dvh;
+                            border-left: .05em solid variables.$b;
+                        }
+                    }
                 }
                 
                 .download-link {
-                    color: variables.$b;
-                    // padding: variables.$size-small;
-                    margin: variables.$size-med;
+                    // padding: 1em;
+                    margin: variables.$size-max;
                 }
             }
         }

@@ -79,7 +79,7 @@
                         <div id="album-content">
                             <img
                                 :src="currentAlbum.personaArtPath" 
-                                :alt="`Capa do álbum ${currentAlbum.title}`" class="persona-art" 
+                                :alt="`Artista do álbum ${currentAlbum.title}`" class="persona-art" 
                             />
                             
                             <div class="container-album-info">
@@ -87,9 +87,16 @@
                                     <h2 class="album-title">{{ currentAlbum.title }}</h2>
                                     <h3 class="album-persona">{{ currentAlbum.artist }} ({{ currentAlbum.year }})</h3>
                                 </div>
-                                <ul id="song-list">
-                                    <li v-for="song in currentAlbum.songs" :key="song.filePath" class="song-item"> {{ song.title }} </li>
-                                </ul>
+                                
+                                <div class="grid">
+                                    <ul id="song-list">
+                                        <li v-for="song in currentAlbum.songs" :key="song.filePath" class="song-item"> {{ song.title }} </li>
+                                    </ul>
+                                    <div id="discography">
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est earum doloremque molestiae sunt. Iusto culpa ex fugit quam harum consectetur iste ad nemo facere unde! Voluptatem dignissimos repudiandae dicta harum?</p>
+                                    </div>
+                                </div>
+
                                 <a :href="currentAlbum.downloadPath" download class="download-link">Baixar Álbum</a>
                             </div>
                         </div>
