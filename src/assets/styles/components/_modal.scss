@@ -50,12 +50,14 @@
                 @media screen and (min-width: 768px) { aspect-ratio: 3 / 1; }
                 @media screen and (min-width: 1440px) {
                     max-width: 25dvw;
-                    max-height: 80dvh;
+                    max-height: 90dvh;
                 }
             }
             
             .container-album-info {
                 color: variables.$b;
+                display: flex;
+                flex-direction: column;
                 #album-info {
                     padding: variables.$size-max variables.$size-max 0 variables.$size-max;
                 }
@@ -67,15 +69,16 @@
                     }
                     
                     #song-list {
-                        // border-bottom: .05em solid variables.$b;
                         margin: variables.$size-med;
                         padding: variables.$size-med;
                         
                         @media screen and (min-width: 1440px) {
-                            // width: 20dvw;
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
                             height: 60dvh;
                             overflow-y: scroll;
                             scrollbar-width: none;
+                            border-right: .05em solid variables.$b;
                         }
                         .song-item {
                             margin-bottom: 5px;
@@ -89,17 +92,23 @@
                             overflow-y: scroll;
                             scrollbar-width: none;
                             padding: variables.$size-max;
-                            // color: variables.$b;
                             // width: 100%;
-                            height: 62dvh;
-                            border-left: .05em solid variables.$b;
+                            height: 55dvh;
                         }
                     }
+
                 }
-                
-                .download-link {
-                    // padding: 1em;
-                    margin: variables.$size-max;
+
+                #download-link {
+                    margin: variables.$size-med;
+                    text-align: right;
+                    font-weight: 500;
+
+                    transition: font-weight .5s;
+
+                    &:hover {
+                        font-weight: 700;
+                    }
                 }
             }
         }

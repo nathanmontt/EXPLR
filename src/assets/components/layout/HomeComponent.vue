@@ -1,4 +1,5 @@
 <script setup>
+    import { setTheme, getSavedTheme } from '@/assets/utils/theme';
     import FolderIcon from '../icons/player/FolderIcon.vue';
     import { onClickOutside } from '@vueuse/core';
     import { ref, onMounted } from 'vue';
@@ -58,9 +59,8 @@
         <button class="btn-cta-folder" @click="openAlbumAndModal" v-else-if="currentAlbum">
             <FolderIcon v-if="!isAlbumRevealed" />
             <img
-                v-else 
-                :src="currentAlbum.coverArtPath" 
-                :alt="`Capa do álbum ${currentAlbum.title}`" class="folder-cover-art" 
+                :src="currentAlbum.coverArtPath"
+                :alt="`Capa do álbum ${currentAlbum.title}`" class="folder-cover-art"
             />
         </button>
         <div v-else>
@@ -93,11 +93,12 @@
                                         <li v-for="song in currentAlbum.songs" :key="song.filePath" class="song-item"> {{ song.title }} </li>
                                     </ul>
                                     <div id="discography">
-                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est earum doloremque molestiae sunt. Iusto culpa ex fugit quam harum consectetur iste ad nemo facere unde! Voluptatem dignissimos repudiandae dicta harum?</p>
+                                        <h2 class="album-title">{{ currentAlbum.artist }}</h2>
+                                        <p>{{ currentAlbum.artistDiscography }}</p>
                                     </div>
                                 </div>
 
-                                <a :href="currentAlbum.downloadPath" download class="download-link">Baixar Álbum</a>
+                                <a :href="currentAlbum.downloadPath" download id="download-link">Baixar Álbum</a>
                             </div>
                         </div>
                     </div>

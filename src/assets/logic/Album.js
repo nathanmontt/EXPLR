@@ -11,9 +11,10 @@ class Album {
     this.coverArtPath = albumData.coverArtPath;
     this.personaArtPath = albumData.personaArtPath;
     this.downloadPath = albumData.downloadPath;
+    this.artistDiscography = albumData.artistDiscography;
 
     // Cria instâncias da classe Song para cada música
-    this.songs = albumData.songs.map(songInfo => new Song(songInfo.title, songInfo.filePath));
+    this.songs = albumData.songs.map((songInfo) => new Song(songInfo.title, songInfo.filePath));
   }
 }
 

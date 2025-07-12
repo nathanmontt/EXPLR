@@ -6,6 +6,7 @@
     "coverArtPath": "/assets/covers/cronicas-de-neon.jpg",
     "personaArtPath": "/assets/personas/persona-1.jpg",
     "downloadPath": "../Downloads/Dev/EXPLR-music/cronicas-de-neon.zip",
+    "artistDiscography": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est earum doloremque molestiae sunt. Iusto culpa ex fugit quam harum consectetur iste ad nemo facere unde! Voluptatem dignissimos repudiandae dicta harum?",
     "songs": [
       { "title": "Avenida dos Sonhos", "filePath": "/assets/audio/avenida-dos-sonhos.mp3" },
       { "title": "Avenida dos Sonhos", "filePath": "/assets/audio/avenida-dos-sonhos.mp3" },

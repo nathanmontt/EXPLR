@@ -1,0 +1,14 @@
+@use '../abstracts/variables';
+
+.container-player {
+    z-index: 9999;
+    // position: fixed;
+    border: 5px solid white;
+    width: 50em;
+    height: 5em;
+    margin: auto;
+    // top: 0;
+    right: 0;
+    bottom: 50px;
+    left: 0;
+}

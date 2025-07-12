@@ -2,6 +2,7 @@
   import FooterComponent from './assets/components/layout/FooterComponent.vue';
   import HeaderComponent from './assets/components/layout/HeaderComponent.vue';
   import HomeComponent from './assets/components/layout/HomeComponent.vue'; 
+  import MusicPlayerComponent from './assets/components/layout/MusicPlayerComponent.vue';
 </script>
 
 <template>
@@ -11,13 +12,13 @@
     </header>
     <main>
       <HomeComponent />
-
-      <!-- <section>
-        <ModalComponent />
-      </section> -->
     </main>
-
+    
     <div id="modal"></div>
+
+    <section>
+      <MusicPlayerComponent />
+    </section>
 
     <footer>
       <FooterComponent />
