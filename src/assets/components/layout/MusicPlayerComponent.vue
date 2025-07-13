@@ -97,7 +97,7 @@
             @timeupdate="onTimeUptade"
             @loadedmetadata="onLoadedMetadata"
         ></audio>
-        <div class="song-title">
+        <div id="song-title">
             {{ album.songs[currentSongIndex].title }}
         </div>
         <div class="container-controls">
