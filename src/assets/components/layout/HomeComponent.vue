@@ -1,7 +1,6 @@
 <script setup>
     import { setTheme, getSavedTheme } from '@/assets/utils/theme';
     import FolderIcon from '../icons/player/FolderIcon.vue';
-    import { onClickOutside } from '@vueuse/core';
     import { ref, onMounted } from 'vue';
     import BackArrowIcon from '../icons/common/BackArrowIcon.vue';
 

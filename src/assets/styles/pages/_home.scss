@@ -6,7 +6,6 @@
     justify-content: center;
     align-items: center;
     min-height: 100dvh;
-    // background-color: red;
 
     @media (min-width: (variables.$size-media-query-tablet - 68px)) {
         flex-direction: row;
@@ -33,7 +32,6 @@
         width: variables.$size-master-blaster;
         height: variables.$size-master-blaster;
         object-fit: cover;
-        // border-radius: 5px;
         transition: transform variables.$time-minimal ease;
 
         &:hover {

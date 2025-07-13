@@ -65,12 +65,10 @@
         audio.value.pause();
     }
     function handleNext() {
-        if (currentSongIndex.value < props.album.songs.length) {
+        if (currentSongIndex.value < props.album.songs.length - 1) {
             currentSongIndex.value++;
             console.log(currentSongIndex.value);
-        }
-
-        if (currentSongIndex.value === props.album.songs.length) {
+        } else {
             currentSongIndex.value = 0; 
         }
     }
@@ -96,6 +94,7 @@
             :src="album.songs[currentSongIndex].filePath"
             @timeupdate="onTimeUptade"
             @loadedmetadata="onLoadedMetadata"
+            @ended="handleNext"
         ></audio>
         <div id="song-title">
             {{ album.songs[currentSongIndex].title }}
