@@ -7,9 +7,11 @@
 
     import AlbumManager from '@/assets/logic/AlbumManager';
     import Album from '@/assets/logic/Album';
+import MusicPlayerComponent from './MusicPlayerComponent.vue';
 
     const isModalOpen = ref(false);
     const modal = ref(null);
+    const player = ref(null);
     
     // Lógica do álbum
     const isLoading = ref(true);
@@ -47,9 +49,12 @@
         }
     }
 
-    onClickOutside(modal, function clickingOutise () {
-        isModalOpen.value = false;
-    })
+    function handleOverlayClick(event) {
+        // Fecha o modal só se o clique for no fundo, não dentro do modal
+        if (event.target.classList.contains('modal-bg')) {
+            isModalOpen.value = false;
+        }
+    }
 </script>
 
 <template>
@@ -69,8 +74,10 @@
         
         <Teleport to="#modal" defer>
             <Transition name="modal">
-                <div class="modal-bg" v-if="isModalOpen && currentAlbum">
-                    <div class="modal" ref="modal">
+                <div class="modal-bg" 
+                    v-if="isModalOpen && currentAlbum"
+                    @click="handleOverlayClick">
+                    <div class="modal">
                         <button class="back-btn" @click="isModalOpen = false">
                             <BackArrowIcon />
                         </button>
@@ -88,6 +95,8 @@
                                     <h3 class="album-persona">{{ currentAlbum.artist }} ({{ currentAlbum.year }})</h3>
                                 </div>
                                 
+                                <a :href="currentAlbum.downloadPath" download class="show-only-mobile">Baixar Álbum</a>
+
                                 <div class="grid">
                                     <ul id="song-list">
                                         <li v-for="song in currentAlbum.songs" :key="song.filePath" class="song-item"> {{ song.title }} </li>
@@ -105,6 +114,7 @@
                 </div>
             </Transition>
         </Teleport>
+        <MusicPlayerComponent ref="player" />
     </div>
 </template>
 

@@ -1,14 +1,38 @@
 @use '../abstracts/variables';
 
+@mixin hover-up {
+    transition: transform .2s;
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
 .container-player {
     z-index: 9999;
-    // position: fixed;
-    border: 5px solid white;
-    width: 50em;
-    height: 5em;
+    position: fixed;
+    background-color: variables.$light-mode;
+    border: 1px solid variables.$b;
+    width: 17em;
+    height: 6em;
     margin: auto;
     // top: 0;
     right: 0;
-    bottom: 50px;
+    bottom: 35px;
     left: 0;
+    
+    @media screen and (min-width: 768px) { width: 30em; }
+    @media screen and (min-width: 1440px) { width: 50em; }
+
+    .container-controls {
+        display: flex;
+        // align-items: center;
+        justify-content: center;
+        // border: 2px solid;
+        // height: 6em;
+        margin-top: variables.$size-med + .5em;
+
+        .hover-up {
+            @include hover-up;
+        }
+    }
 }

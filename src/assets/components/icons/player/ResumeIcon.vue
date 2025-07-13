@@ -1,0 +1,10 @@
+<template>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="26px"
+        fill="#000000">
+        <path d="M240-240v-480h80v480h-80Zm160 0 400-240-400-240v480Zm80-141v-198l165 99-165 99Zm0-99Z"/>
+    </svg>
+</template>

@@ -33,7 +33,7 @@
         width: variables.$size-master-blaster;
         height: variables.$size-master-blaster;
         object-fit: cover;
-        border-radius: 5px;
+        // border-radius: 5px;
         transition: transform variables.$time-minimal ease;
 
         &:hover {
