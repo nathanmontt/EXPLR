@@ -23,6 +23,10 @@
     @media screen and (min-width: 768px) { width: 30em; }
     @media screen and (min-width: 1440px) { width: 50em; }
 
+    .song-title {
+        color: variables.$b;
+    }
+
     .container-controls {
         display: flex;
         // align-items: center;
@@ -33,6 +37,22 @@
 
         .hover-up {
             @include hover-up;
+        }
+    }
+
+    .progress-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .duration-time {
+            color: variables.$b;
+            // margin-bottom: 10px;
+        }
+
+        #progress-bar-duration {
+            text-align: center;
+            width: 60%;
+            // margin-bottom: 10px;
         }
     }
 }

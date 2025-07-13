@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, watch } from 'vue';
+    import { ref, watch, defineExpose } from 'vue';
     import NextIcon from '../icons/player/NextIcon.vue';
     import PauseIcon from '../icons/player/PauseIcon.vue';
     import PrevIcon from '../icons/player/PrevIcon.vue';
@@ -7,24 +7,37 @@
 
     import Song from '@/assets/logic/Song';
 
+    const currentSongIndex = ref(0);
+    const isPlaying = ref(false);
+    const currentTime = ref(0);
+    const duration = ref(0);
+
+    const audio = ref(null);
+
     // Recebe album e musicas via props
     const props = defineProps({
         album: Object,
         default: () => ({songs: []})
     });
 
-    const isPlaying = ref(false);
-    const currentTime = ref(0);
-    const duration = ref(0);
-    const currentSongIndex = ref(0);
-
-    const audio = ref(null);
+    defineExpose({
+        currentSongIndex,
+        handleResume
+    })
     
     watch(currentSongIndex, () => {
-        if (audio.value && props.album && props.album.songs && props.album.songs.length) {
+        if (
+            audio.value && 
+            props.album && 
+            props.album.songs && 
+            props.album.songs.length
+        ) {
             audio.value.src = props.album.songs[currentSongIndex.value].filePath;
             audio.value.currentTime = 0;
-            if (isPlaying.value) audio.value.play();
+
+            // Sempre toca ao trocar de música
+            audio.value.play();
+            isPlaying.value = true;
         }
     });
 
@@ -77,7 +90,7 @@
             <NextIcon class="hover-up" @click="handleNext" />
         </div>
         <div class="progress-bar">
-            <span>{{ formatTime(currentTime) }}</span>
+            <span class="duration-time">{{ formatTime(currentTime) }}</span>
             <input
                 type="range"
                 min="0"
@@ -85,8 +98,9 @@
                 step="1"
                 v-model="currentTime"
                 @input="audio.value.currentTime = currentTime"
+                id="progress-bar-duration"
             />
-            <span>{{ formatTime(duration) }}</span>
+            <span class="duration-time">{{ formatTime(duration) }}</span>
         </div>
     </div>
 </template>
