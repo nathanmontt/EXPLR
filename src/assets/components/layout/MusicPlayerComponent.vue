@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, watch, defineExpose } from 'vue';
+    import { ref, watch } from 'vue';
     import NextIcon from '../icons/player/NextIcon.vue';
     import PauseIcon from '../icons/player/PauseIcon.vue';
     import PrevIcon from '../icons/player/PrevIcon.vue';
@@ -7,8 +7,8 @@
 
     import Song from '@/assets/logic/Song';
 
-    const currentSongIndex = ref(0);
     const isPlaying = ref(false);
+    const currentSongIndex = ref(0);
     const currentTime = ref(0);
     const duration = ref(0);
 
@@ -25,6 +25,10 @@
         handleResume
     })
     
+    /* Essa feature verifica se houve mudança no quesito de música.
+       Caso os valores sejam aqueles mesmo, no caso definidos acima, dentro do if
+        começamos a mudá-los.
+    */
     watch(currentSongIndex, () => {
         if (
             audio.value && 
@@ -61,14 +65,27 @@
         audio.value.pause();
     }
     function handleNext() {
-        if (currentSongIndex.value < props.album.songs.length - 1) {
+        if (currentSongIndex.value < props.album.songs.length) {
             currentSongIndex.value++;
+            console.log(currentSongIndex.value);
+        }
+
+        if (currentSongIndex.value === props.album.songs.length) {
+            currentSongIndex.value = 0; 
         }
     }
     function handlePrev() {
         if (currentSongIndex.value > 0) {
             currentSongIndex.value--;
+            console.log(currentSongIndex.value);
+        } else {
+            currentSongIndex.value = props.album.songs.length - 1;
+            console.log(currentSongIndex.value);
         }
+    }
+
+    function onSeek () {
+        audio.value.currentTime = currentTime.value;
     }
 </script>
 
@@ -98,6 +115,7 @@
                 step="1"
                 v-model="currentTime"
                 @input="audio.value.currentTime = currentTime"
+                @change="onSeek"
                 id="progress-bar-duration"
             />
             <span class="duration-time">{{ formatTime(duration) }}</span>

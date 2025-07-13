@@ -103,10 +103,13 @@
                                             v-for="(song, index) in currentAlbum.songs" 
                                             :key="song.filePath" 
                                             class="song-item"
+                                            :class="{
+                                                'active-song' : $refs.player && $refs.player.currentSongIndex === index
+                                            }"
                                             @click="
                                                 $refs.player.currentSongIndex = index;
-                                                $refs.player.handleResume();
-                                            "> {{ song.title }} </li>
+                                                $refs.player.handleResume();"
+                                            > {{ song.title }} </li>
                                     </ul>
                                     <div id="discography">
                                         <h2 class="album-title">{{ currentAlbum.artist }}</h2>
