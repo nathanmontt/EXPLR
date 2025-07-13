@@ -7,7 +7,7 @@
 
     import AlbumManager from '@/assets/logic/AlbumManager';
     import Album from '@/assets/logic/Album';
-import MusicPlayerComponent from './MusicPlayerComponent.vue';
+    import MusicPlayerComponent from './MusicPlayerComponent.vue';
 
     const isModalOpen = ref(false);
     const modal = ref(null);
@@ -99,7 +99,14 @@ import MusicPlayerComponent from './MusicPlayerComponent.vue';
 
                                 <div class="grid">
                                     <ul id="song-list">
-                                        <li v-for="song in currentAlbum.songs" :key="song.filePath" class="song-item"> {{ song.title }} </li>
+                                        <li 
+                                            v-for="(song, index) in currentAlbum.songs" 
+                                            :key="song.filePath" 
+                                            class="song-item"
+                                            @click="
+                                                $refs.player.currentSongIndex = index;
+                                                $refs.player.handleResume();
+                                            "> {{ song.title }} </li>
                                     </ul>
                                     <div id="discography">
                                         <h2 class="album-title">{{ currentAlbum.artist }}</h2>
@@ -114,7 +121,8 @@ import MusicPlayerComponent from './MusicPlayerComponent.vue';
                 </div>
             </Transition>
         </Teleport>
-        <MusicPlayerComponent ref="player" />
+        
+        <MusicPlayerComponent v-if="currentAlbum" :album="currentAlbum" ref="player" />
     </div>
 </template>
 

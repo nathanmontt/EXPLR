@@ -14,7 +14,7 @@
       <HomeComponent />
     </main>
     
-    <div id="modal"></div>
+    <!-- <div id="modal"></div> -->
 
     <section>
       <MusicPlayerComponent />
