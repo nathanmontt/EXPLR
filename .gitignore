@@ -28,3 +28,17 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# Music
+*.aif
+*.cda
+*.mid
+*.midi
+*.mp3
+*.mpa
+*.ogg
+*.wav
+*.wma
+*.flac
+
+/public/assets/covers/*
